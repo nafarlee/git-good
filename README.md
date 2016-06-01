@@ -109,6 +109,8 @@ What happens if you have changes pending in your working directory and you try t
 
 ## Useful Git Commands
 
+--------------------------------------------------------------------------------
+
 ### `git config`
 
 This is the command that allows you to customize your git configuration. Configurations can be applied globally, which will reside in a config file in your home directory, or locally, which will be stored with the project's `.git` repository.
@@ -122,6 +124,8 @@ Tell `git` to `config` our git settings `--global`ly by changing our `user.name`
 #### `git config --global user.email "coolguy@email.com"`
 
 Tell `git` to `config` our git settings `--global`ly by changing our `user.email` for further commits to `coolguy@email.com`
+
+--------------------------------------------------------------------------------
 
 ### `git init` and `git clone`
 
@@ -140,6 +144,8 @@ Tell `git` to `init`ialize the current directory to be managed by git. Ultimatel
 #### `git clone <URL>`
 
 Tell `git` to grab the Git project metadata hosted at the URL, and make a `clone` of the project under the current working directory.
+
+--------------------------------------------------------------------------------
 
 ### `git add`
 
@@ -168,6 +174,8 @@ For each diff, you have a few available commands:
 
 There are other options, but they are not crucial to the use of the `-p`atch interactive mode.
 
+--------------------------------------------------------------------------------
+
 ### `git commit`
 
 This command is the way that a series of changes made know to the staging area are packaged up as a single commit and added to the list of snapshots in the .git repository.
@@ -175,6 +183,8 @@ This command is the way that a series of changes made know to the staging area a
 #### `git commit -m "<description>"`
 
 Tell `git` to bundle up the contents of the staging area as a single `commit` with the `-m`essage `<description>`.
+
+--------------------------------------------------------------------------------
 
 ### `git status`
 
