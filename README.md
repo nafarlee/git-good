@@ -73,6 +73,40 @@ Once changes are commited, they are solidified as a new snapshot in Git's repres
 
 All the data Git manages is generated as part of this process. Every other supporting functionality Git offers is just tooling around this information.
 
+### The push/pull Lifecycle
+
+#### Remote
+
+So you have your git repository coming along nicely, making steady progress on your project, but now someone else wants to collaborate with you. Sure, git will manage changes efficiently as snapshots, but if collaborating means copying the project around on flash drives, that all goes out the window anyway.
+
+This is where the push/pull lifecycle comes in, and honestly it is a very simple concept. Though each developer/writer has a copy of the project locally, there is usually a centrally stored version of the project on a server somewhere as well.
+
+The server does not have more information about the project than people do locally or anything like that, but instead acts as a focal point for the changes people make to come together.
+
+So imagine a developer is working on a project alone, and has a lot of progress, but now wants to collaborate. What they will do is set the Git server's endpoint as their remote point (this remote point is set automatically if the project was cloned).
+
+This remote (if there is only one) is usually referred to as origin.
+
+#### Push
+
+Then, they will run `git push origin master`.
+
+The `master` business will be explained later, but this command tells `git` to `push` all of the information about the project in my local .git repository to the `origin` (usually over the network). This is an efficient diff, as it will only send what the server doesn't know already each time.
+
+Keep in mind this is only pushing the .git repositories knowledge, so anything currently in staging or the working directory only won't be a part of the push.
+
+#### Pull
+
+If some other developer/writer also had a local copy of that project on their machine, they could then run `git pull origin master`, which is (sort of) the opposite to `git push origin master`.
+
+Ignorning the `master` stuff again, this command tells `git` to `pull` the .git repository information from `origin`.
+
+The reason this is "sort of" the opposite of the `push` is that is actually gets the known changes from the .git repository on the server, but then also applies them to the working directory.
+
+`git fetch` is the actual opposite of `git push`, as it will only download the .git repository information and apply it to your own .git repository. 
+
+What happens if you have changes pending in your working directory and you try to `pull`? Well nothing, actually. It won't allow you to pull until your working directory contains no new changes.
+
 ## Useful Git Commands
 
 ### `git config`
