@@ -175,3 +175,9 @@ This command is the way that a series of changes made know to the staging area a
 #### `git commit -m "<description>"`
 
 Tell `git` to bundle up the contents of the staging area as a single `commit` with the `-m`essage `<description>`.
+
+### `git status`
+
+You are going to be running this one a lot. Git manages a whole lot of information, and it can be quite confusing moving multiple changes throughout three tiers and remotes and such.
+
+This command prints out a summary of outstanding changes about the working directory and staging area, as well as some other relevant information, like branch name.
