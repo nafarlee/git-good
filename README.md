@@ -133,3 +133,11 @@ For each diff, you have a few available commands:
 - s - split the currently presented lines, so they may be added or ignored with finer granularity
 
 There are other options, but they are not crucial to the use of the `-p`atch interactive mode.
+
+### `git commit`
+
+This command is the way that a series of changes made know to the staging area are packaged up as a single commit and added to the list of snapshots in the .git repository.
+
+#### `git commit -m "<description>"`
+
+Tell `git` to bundle up the contents of the staging area as a single `commit` with the `-m`essage `<description>`.
