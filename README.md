@@ -106,3 +106,30 @@ Tell `git` to `init`ialize the current directory to be managed by git. Ultimatel
 #### `git clone <URL>`
 
 Tell `git` to grab the Git project metadata hosted at the URL, and make a `clone` of the project under the current working directory.
+
+### `git add`
+
+This command is the way that a change in the working directory is added to the staging area. It can be run as many times as necessary to add more and more to the staging area, until the staging area contains all wanted changes for the next commit.
+
+The files this acts upon must actually physically reside within the projects folder, either in the root or in a subfolder.
+
+Some useful forms of this command:
+
+#### `git add <filepath>`
+
+Tell `git` to `add` all changes in the file (or folder) at `filepath` to the staging area.
+
+#### `git add -p`
+
+Tell `git` to interactively ask about individual `-p`atch changes to `add` to the staging area. This command is actually quite robust, and not immediately intuitive.
+
+While in the interactive session, a list of diffs will be presented for each changed line in the project.
+
+For each diff, you have a few available commands:
+
+- y - add these changed lines to the staging area
+- n - do not add these changes lines to the staging area
+- q - leave the interactive patch session
+- s - split the currently presented lines, so they may be added or ignored with finer granularity
+
+There are other options, but they are not crucial to the use of the `-p`atch interactive mode.
