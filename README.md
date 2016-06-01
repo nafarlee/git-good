@@ -72,3 +72,15 @@ The entire staging area is sent at once to the .git directory, but you may selec
 Once changes are commited, they are solidified as a new snapshot in Git's representation of the project history.
 
 All the data Git manages is generated as part of this process. Every other supporting functionality Git offers is just tooling around this information.
+
+## Useful Git Commands
+
+### `git config`
+
+This is the command that allows you to customize your git configuration. Configurations can be applied globally, which will reside in a config file in your home directory, or locally, which will be stored with the project's `.git` repository.
+
+There are far too many configurations to enumerate, but some useful ones are:
+
+`git config --global user.name "John Smith"` - Tell `git` to `config` our git settings `--global`ly by changing our `user.name` for further commits to `John Smith`
+
+`git config --global user.email "coolguy@email.com"` - Tell `git` to `config` our git settings `--global`ly by changing our `user.email` for further commits to `coolguy@email.com`
