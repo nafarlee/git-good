@@ -57,6 +57,8 @@ The three main states are:
 - The Staging Area
 - The .git directory
 
+![Main Git States](./images/states.png)
+
 The working directory, for all intent and purposes, is how your project exactly exists on your filesystem. You interact with these files how you normally would. You may edit, delete, move, and copy with any tools you see fit.
 
 Once you are happy with the state of a file, or many files, or even a few lines that were changed in a file, you run a git command (`add` in this case) to make the staging area aware of these changes. Imagine the staging area as a transport platform with a box on it, waiting to have references to file changes added on to it.
