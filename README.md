@@ -88,3 +88,21 @@ Tell `git` to `config` our git settings `--global`ly by changing our `user.name`
 #### `git config --global user.email "coolguy@email.com"`
 
 Tell `git` to `config` our git settings `--global`ly by changing our `user.email` for further commits to `coolguy@email.com`
+
+### `git init` and `git clone`
+
+These commands might seem like strange candidates to be lumped together, but they are really two sides to the same coin. Both are run once when you initially want to start working on a project.
+
+`init` is run when the very first person on a project decides they want git in their project's life. This can be before any code is written, or later down the line when you already have some code.
+
+`clone` is run everytime someone wants the project (including absolutely ALL Git project information) to exist on their computer, allowing them to contribute just like any other person.
+
+Typically one person runs the `init` command once at the start of the project, and then whenever a new developer is interested in contributing, they `clone` that same project and then forever have that project.
+
+#### `git init`
+
+Tell `git` to `init`ialize the current directory to be managed by git. Ultimately, this just created the .git folder and all its necessary contents.
+
+#### `git clone <URL>`
+
+Tell `git` to grab the Git project metadata hosted at the URL, and make a `clone` of the project under the current working directory.
