@@ -81,6 +81,10 @@ This is the command that allows you to customize your git configuration. Configu
 
 There are far too many configurations to enumerate, but some useful ones are:
 
-`git config --global user.name "John Smith"` - Tell `git` to `config` our git settings `--global`ly by changing our `user.name` for further commits to `John Smith`
+#### `git config --global user.name "John Smith"`
 
-`git config --global user.email "coolguy@email.com"` - Tell `git` to `config` our git settings `--global`ly by changing our `user.email` for further commits to `coolguy@email.com`
+Tell `git` to `config` our git settings `--global`ly by changing our `user.name` for further commits to `John Smith`
+
+#### `git config --global user.email "coolguy@email.com"`
+
+Tell `git` to `config` our git settings `--global`ly by changing our `user.email` for further commits to `coolguy@email.com`
