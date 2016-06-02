@@ -59,7 +59,57 @@ _You have been warned..._
 
 ## Design and Inner Workings
 
-We can talk all day about the intricacies and architecture of Git, but there are only a few concepts that are necessary to understand if you want to make good use of Git.
+### The Cathedral and the Bazaar
+
+All VCS help track versions of files as people modify them.
+In this sense, Git is no different.
+
+Though each VCS might implement different nifty features and workflows, the basic idea is the same.
+
+However, because people like to put things into categories, VCS systems are usually divided into two main genres:
+
+- Distributed
+- Centralized
+
+#### Centralized
+
+Centralized VCS function by maintaining a single master copy of a project somewhere (probably a server).
+
+As a team member working on a project using Centralized VCS, you directly attempt to apply patches to a server.
+Anytime you get a file, you are getting the most recent version that the server yields.
+
+This means that a developer's machine has little to no record of the actual project history, and all project affecting actions require a networked connection to this centralized server.
+
+Though an extensive pro and con list is outside of the scope of this document, I will remark that this architecture is probably the one that is the most intuitive to someone seeking to implement a VCS, at least at first.
+As in, someone interacting with a VCS, not knowing much better, would probably assume this is how all interactions take place.
+
+Examples of Centralized VCS include: SVN, CVS, and Perforce.
+
+#### Decentralized
+
+Decentralized VCS (DVCS) changes one important detail about this model.
+There is no central server in DVCS.
+There can be a server that holds onto the project and its history and all of its metadata, but the server does not have any special functionality or privileges over any other user.
+
+Each and every user maintains the exact same information that this server holds, and as such, every local machine could function as a server and a client.
+In a DVCS, you are simply modifying your local project, recording what has changed, and then sending a list of patches to another client.
+
+If you were so inclined, two or more people could have a local copy of a project, make changes, and then directly send their changes to each and every other developer machine.
+All of the mechanics of patch-exchanges would work identically.
+
+In practice, this is not how people utilize DVCS, and still have a central host that is semantically treated as a "master".
+However, should anything happen to this master, or should a network connection not be available, the changes a developer makes to their local project are entirely unhindered.
+
+Once the server becomes available again, they can simply send along all of the patches they created in the meantime to the server.
+Afterwards, each developer is free to grab these patches from the server, and add them to their local clone of the project.
+
+However, this model has its issues as well, and is made possible by a lot of fairly sophisticated diffing. Usually this is entirely automatic, but sometimes, it can be painfully manual.
+
+Again, measuring the pros and cons of each VCS type is not within the scope of this document, but I personally believe DVCS is an improvement over Centralized VCS.
+
+If you have not guessed yet, Git falls into the category of DVCS.
+
+Examples of Decentralized VCS include: Git, Mercurial, BitKeeper.
 
 ### How Git Exists in a Project
 
