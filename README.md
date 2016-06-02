@@ -106,8 +106,6 @@ So you have your git repository coming along nicely, making steady progress on y
 
 This is where the push/pull lifecycle comes in, and honestly it is a very simple concept. Though each developer/writer has a copy of the project locally, there is usually a centrally stored version of the project on a server somewhere as well.
 
-The server does not have more information about the project than people do locally or anything like that, but instead acts as a focal point for the changes people make to come together.
-
 So imagine a developer is working on a project alone, and has a lot of progress, but now wants to collaborate. What they will do is set the Git server's endpoint as their remote point (this remote point is set automatically if the project was cloned).
 
 This remote (if there is only one) is usually referred to as origin.
