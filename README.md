@@ -14,7 +14,8 @@ Historically, the purpose of a VCS is exclusively to track changes to files over
 Though this does not sound like a particularly amazing feat, it is a hard process to get right if you are trying to do it manually.
 
 Manually saving entire copies of a project is incredibly costly on disk space, which puts a premium on backups.
-Not to mention renaming copies of folders from
+Not to mention renaming copies of folders
+from
 `cool-project-v2-2016-05-02-10:15 (1)`
 to
 `cool-project-v2-2016-05-02-10:32`
