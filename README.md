@@ -1,5 +1,7 @@
 # Git
 
+If you have no idea what Git or version control are, continue reading.
+
 If you are already comfortable with Git, but are partially curious how it actually works, skip to "Design and Inner Workings".
 
 If you are already comfortable with Git, but just want to learn some new sweet commands, skip to "Useful Git commands".
