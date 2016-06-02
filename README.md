@@ -40,7 +40,7 @@ Though not exhaustive, the following list of tangible benefits should (hopefully
 - Collaboration across multiple people can happen asynchronously without:
   - Race conditions when writing to the same file on a central server.
   - Drastic file differences when team members work in isolation.
-  - Different development intents can be worked on in parallel. 
+  - Different development intents can be worked on in parallel.
 - Basic backup happens as part of the workflow, and extending to bulletproof backups is simpler
 - Software versioning, either as part of release cycles, or maintaining variants, is simplified.
 
@@ -56,7 +56,7 @@ This is the folder that marks the difference between a project managed by Git, a
 
 As a result, if you have a project managed by Git, and you no longer want to manage it via Git, and do not care about the history Git has managed, simply __deleting the .git folder is all that is necessary to stop using Git and remove all history for that project__.
 
-That sounds scary, but chances are, you will not manually edit anything in the .git folder for the entire duration of your career, and _almost_ all Git commands append new information to the history, rather than change previous history. 
+That sounds scary, but chances are, you will not manually edit anything in the .git folder for the entire duration of your career, and _almost_ all Git commands append new information to the history, rather than change previous history.
 
 As a result, it is __very hard__ to lose information about your project when you are working with Git.
 
@@ -76,7 +76,7 @@ The working directory, for all intent and purposes, is how your project exactly 
 
 Once you are happy with the state of a file, or many files, or even a few lines that were changed in a file, you run a git command (`add` in this case) to make the staging area aware of these changes. Imagine the staging area as a transport platform with a box on it, waiting to have references to file changes added on to it.
 
-After we have made the staging area aware of all the file changes we plan to package together, we must now bundle up the box, and send it to the .git directory (which models the repository history). 
+After we have made the staging area aware of all the file changes we plan to package together, we must now bundle up the box, and send it to the .git directory (which models the repository history).
 
 To do this, we attach a message to this bundle, briefly describing the intent of these changes, and then we `commit` this bundle to the permanent project history.
 
@@ -116,7 +116,7 @@ Ignorning the `master` stuff again, this command tells `git` to `pull` the .git 
 
 The reason this is "sort of" the opposite of the `push` is that is actually gets the known changes from the .git repository on the server, but then also applies them to the working directory.
 
-`git fetch` is the actual opposite of `git push`, as it will only download the .git repository information and apply it to your own .git repository. 
+`git fetch` is the actual opposite of `git push`, as it will only download the .git repository information and apply it to your own .git repository.
 
 What happens if you have changes pending in your working directory and you try to `pull`? Well nothing, actually. It won't allow you to pull until your working directory contains no new changes.
 
