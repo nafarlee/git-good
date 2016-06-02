@@ -8,13 +8,24 @@ If you are already comfortable with Git, but just want to learn some new sweet c
 
 ## What is Git?
 
-Many would be inclined to exclusively describe Git as a version control system (VCS), though I personally believe this is selling Git a bit short.
+In the simplest terms, Git is a version control system (VCS).
+Historically, the purpose of a VCS is exclusively to track changes to files over time.
 
-Certainly its main focus, as is the focus of all VCS, is to organize changes made to a project over time.
+Though this does not sound like a particularly amazing feat, it is a hard process to get right if you are trying to do it manually.
 
-Someone who is not familiar with VCS might assume this is only useful for a project wide 'undo history'. 
+Manually saving entire copies of a project is incredibly costly on disk space, which puts a premium on backups.
+Not to mention renaming copies of folders from
+`cool-project-v2-2016-05-02-10:15 (1)`
+to
+`cool-project-v2-2016-05-02-10:32`
+can get pretty tedious.
 
-However, in practice, using Git succesfully means treating it much more like a supportive function than just an undo button.
+Alternatively, to save on disk space, you can copy only the files that changed into these successive folder copies, but then actually viewing the project in full at any given point becomes incredibly difficult.
+
+VCS seeks to alleviate this by offering simple abstractions on top of this project diff business that work at scale.
+
+Someone who is not familiar with VCS might assume this is only useful for a project wide 'undo history'.
+However, in practice, using VCS, and Git successfully means treating it much more like a supportive function than just an undo button.
 
 ## What are the benefits?
 
