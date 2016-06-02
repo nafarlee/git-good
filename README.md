@@ -44,6 +44,18 @@ Though not exhaustive, the following list of tangible benefits should (hopefully
 - Basic backup happens as part of the workflow, and extending to bulletproof backups is simpler
 - Software versioning, either as part of release cycles, or maintaining variants, is simplified.
 
+## Evangelism?
+
+While this guide focuses on Git, as it is VCS I use most often because I am quite happy with it, Git is not a be all end all.
+There are other systems that perform similarly to Git, and have different tradeoffs that might make more sense depending upon your use case.
+
+The important thing is to use a true VCS of __some__ kind.
+Even if you are developing/writing solo, the utility a VCS provides over manual backups (or worse, nothing at all!) cannot be overstated.
+
+Beyond this point, things become increasingly Git focused.
+
+_You have been warned..._
+
 ## Design and Inner Workings
 
 We can talk all day about the intricacies and architecture of Git, but there are only a few concepts that are necessary to understand if you want to make good use of Git.
