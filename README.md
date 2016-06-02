@@ -31,18 +31,18 @@ However, in practice, using VCS, and Git successfully means treating it much mor
 
 Though not exhaustive, the following list of tangible benefits should (hopefully) spark your interest:
 
-- Intelligent tools and supporting capabilities that are possible because of the management of project history.
-- Implicit documentation of each change that happens to a project, which shows the path of implementation the developer took to complete a feature/fix an issue.
-- Low risk experimentation with single/multiple files, solo or collaboratively, as changes can be selectively undone or left unapplied.
 - Extensive project versioning that:
   - Allows viewing the state of a project at any point in time easily
   - Doesn't use unnecessary disk space for full project clones.
+- Intelligent tools and supporting capabilities that are possible because of the management of project history.
+- Implicit documentation of each change that happens to a project, which shows the path of implementation the developer took to complete a feature/fix an issue.
+- Low risk experimentation with single/multiple files, solo or collaboratively, as changes can be selectively undone or left unapplied.
 - Collaboration across multiple people can happen asynchronously without:
   - Race conditions when writing to the same file on a central server.
   - Drastic file differences when team members work in isolation.
   - Different development intents can be worked on in parallel. 
 - Basic backup happens as part of the workflow, and extending to bulletproof backups is simpler
-- Versioning, either as part of release cycles, or maintaing variants, is simplified.
+- Software versioning, either as part of release cycles, or maintaining variants, is simplified.
 
 ## Design and Inner Workings
 
