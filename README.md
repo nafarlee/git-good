@@ -173,7 +173,7 @@ Keep in mind this is only pushing the .git repositories knowledge, so anything c
 
 If some other developer/writer also had a local copy of that project on their machine, they could then run `git pull origin master`, which is (sort of) the opposite to `git push origin master`.
 
-Ignorning the `master` stuff again, this command tells `git` to `pull` the .git repository information from `origin`.
+Ignoring the `master` stuff again, this command tells `git` to `pull` the .git repository information from `origin`.
 
 The reason this is "sort of" the opposite of the `push` is that is actually gets the known changes from the .git repository on the server, but then also applies them to the working directory.
 
