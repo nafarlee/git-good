@@ -46,7 +46,7 @@ Though not exhaustive, the following list of tangible benefits should (hopefully
 
 ## Evangelism?
 
-While this guide focuses on Git, as it is VCS I use most often because I am quite happy with it, Git is not a be all end all.
+While this guide focuses on Git, as it is the VCS I use most often because I am quite happy with it, Git is not a be all end all.
 There are other systems that perform similarly to Git, and have different tradeoffs that might make more sense depending upon your use case.
 
 The important thing is to use a true VCS of __some__ kind.
