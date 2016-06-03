@@ -504,3 +504,21 @@ Tell `git` to list the `log` of commits, including all branch `--graph`s, output
 This command is a __doozy__.
 Do not try to type this in all the time.
 Alias it to something short and sweet, and then run it to see the entire project history, in a very clean and concise output that includes an actual ASCII graph chart of all commits.
+
+### `git branch`
+
+This is the command that is responsible for the and listing, and deletion of branches.
+Merging is a separate command.
+This command is also capable of creating a new branch, but it is much more common to shortcut this by creating a new branch as your check it out.
+
+#### `git branch`
+
+Tell `git` to list local branches.
+
+#### `git branch -a`
+
+Tell `git` to list `-a`ll branches, including those on remote.
+
+#### `git branch -d <branch-name>`
+
+Tell `git` to `-d`elete a local `branch` called `branch-name` that has already been merged.
