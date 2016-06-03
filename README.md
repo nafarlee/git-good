@@ -464,10 +464,10 @@ In a similar vein to `git status`, this reports about what is different in the p
 
 The difference being, this command is focused on what the actual line-by-line changes are rather than giving a high level status of the project.
 
-`git diff`
+#### `git diff`
 
 Tell `git` to report about the `diff`erences across the entire project.
 
-`git diff <filepath> ...`
+#### `git diff <filepath> ...`
 
 Tell `git` to report about the `diff`erences  in each of the `files`.
