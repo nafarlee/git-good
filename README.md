@@ -587,3 +587,13 @@ See the `push/pull Lifecycle` section for more details.
 Tell `git` to `push` all new commits from the local .git repository for the `branch` to `remote`.
 
 See the `push/pull Lifecycle` section for more details.
+
+--------------------------------------------------------------------------------
+
+### `git merge`
+
+#### `git merge <other-branch>`
+
+Tell `git` to `merge` the `other-branch` into the active branch.
+
+See the `Branches` section for more details
