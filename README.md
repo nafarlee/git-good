@@ -449,7 +449,7 @@ Tell `git` to bundle up the contents of the staging area as a single `commit` wi
 
 ### `git status`
 
-Tell `git` to give the `status` of the current branch name and outstanding changes in the working directory or staging area.
+Tell `git` to give the `status` of the current branch name and file names that have outstanding changes in the working directory or staging area.
 
 You are going to be running this one a lot. Git manages a whole lot of information, and it can be quite confusing moving multiple changes throughout three tiers and remotes and such.
 
