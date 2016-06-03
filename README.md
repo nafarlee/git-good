@@ -454,3 +454,20 @@ Tell `git` to give the `status` of the current branch name and file names that h
 You are going to be running this one a lot. Git manages a whole lot of information, and it can be quite confusing moving multiple changes throughout three tiers and remotes and such.
 
 This command prints out a summary of outstanding changes about the working directory and staging area, as well as some other relevant information, like branch name.
+
+--------------------------------------------------------------------------------
+
+### `git diff`
+
+
+In a similar vein to `git status`, this reports about what is different in the project between the working directory and the staging area.
+
+The difference being, this command is focused on what the actual line-by-line changes are rather than giving a high level status of the project.
+
+`git diff`
+
+Tell `git` to report about the `diff`erences across the entire project.
+
+`git diff <filepath> ...`
+
+Tell `git` to report about the `diff`erences  in each of the `files`.
