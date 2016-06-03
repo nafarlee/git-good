@@ -567,3 +567,11 @@ __important__: This is how you will create a new branch most of the time.
 Tell `git` to `checkout` to `-t`rack the `remote-branch-name` locally, and then `checkout` each file in the `remote-branch`
 
 Git technically has to have a local copy of any history you want to work on, so if there is a remote branch you don't reference locally, this command simultaneously downloads that branch, creating a local reference, switches to it, and then checks out each file
+
+--------------------------------------------------------------------------------
+
+### `git pull`
+
+#### `git pull <remote> <branch>`
+
+Tell `git` to `pull` down all new commits from the `branch` located at `remote` and apply them to the local `branch`. If `branch` is the active branch, apply the commits to the working directory.
