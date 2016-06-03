@@ -471,3 +471,36 @@ Tell `git` to report about the `diff`erences across the entire project.
 #### `git diff <filepath> ...`
 
 Tell `git` to report about the `diff`erences  in each of the `files`.
+
+--------------------------------------------------------------------------------
+
+### `git log`
+
+This command simply shows the list of commits in the .git repository in chronological order for the current branch.
+By default, it displays the commit hash number, the author, the date committed, and the commit message.
+
+However, through arguments, it can display so  much more (or less!) information, and serves as a wonderful tool for going over project.
+
+#### `git log`
+
+Tell `git` to list the `log` of commits for the current branch.
+
+#### `git log <filepath> ...`
+
+Tell `git` to list the `log` of commits for the listed `filepaths` for the current branch.
+
+#### `git log -p`
+
+Tell `git` to list the `log` of commits, including the actual lines `-p`atched, for the current branch.
+
+#### `git log --stat`
+
+Tell `git` to list the `log` of commits, including the `--stat`istics of per-file line changes for the current branch.
+
+#### `git log --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --all`
+
+Tell `git` to list the `log` of commits, including all branch `--graph`s, outputted in a `--pretty-format` that I specify in the following string. Only show the `--abbrev-commit` number, and include `--all` project history across all branches.
+
+This command is a __doozy__.
+Do not try to type this in all the time.
+Alias it to something short and sweet, and then run it to see the entire project history, in a very clean and concise output that includes an actual ASCII graph chart of all commits.
