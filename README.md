@@ -283,6 +283,33 @@ However, in the other direction, trying to merge `iss53` into `master`, because 
 
 It is called that because the HEAD pointer for `master` is quite literally just moved forward to the commit `iss53` points to.
 
+Once we are finished with `iss53`, and it's changes are merged into a branch we actually plan to hold onto, we can go ahead and delete the `iss53` branch, which really just removes the erroneous pointer in this case.
+Some people like to hold onto all of their branches for documentation purposes, but that is up to user discretion.
+
+If this was all that branches were capable of, they wouldn't be all that useful.
+
+### Complex Merging
+
+Moving back a bit, let's say we did not merge `iss53` into `master`, and some dire situation came up, and we had to commit directly to `master` immediately.
+We will call this explosive commit C4.
+
+And then let's say work continued on `iss53`, producing a new commit C5.
+
+Now we no longer have a linear history if we consider all of our branches, but instead we have a directed acyclic graph.
+
+![](./images/branching3.png)
+
+If we wanted to merge `iss53` into `master` now, it might not be entirely obvious what happens.
+Well, in many cases, because of recording changes line by line, and some complex diffing algorithms, Git can determine that there are no ambiguities, even when merging very complex branches.
+
+It is called this because 3 commits are involved in the process.
+It takes the HEAD commit of branch `iss53`, the HEAD commit of branch `master`, and creates a new commit that encompasses both their histories, and actually has each of those 2 nodes as its parents. It then moves the active branches pointer to this new commit.
+
+And that's it!
+
+Assuming we tried to merge `iss53` into `master` right now, the result would look something like this.
+
+![](./images/branching4.png)
 
 ## Useful Git Commands
 
