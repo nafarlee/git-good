@@ -575,3 +575,11 @@ Git technically has to have a local copy of any history you want to work on, so 
 #### `git pull <remote> <branch>`
 
 Tell `git` to `pull` down all new commits from the `branch` located at `remote` and apply them to the local `branch`. If `branch` is the active branch, apply the commits to the working directory.
+
+--------------------------------------------------------------------------------
+
+### `git push`
+
+#### `git push <remote> <branch>`
+
+Tell `git` to `push` all new commits from the local .git repository for the `branch` to `remote`.
