@@ -181,6 +181,109 @@ The reason this is "sort of" the opposite of the `push` is that is actually gets
 
 What happens if you have changes pending in your working directory and you try to `pull`? Well nothing, actually. It won't allow you to pull until your working directory contains no new changes.
 
+### Branches
+
+This is probably the Git feature that is the most confusing, which is a shame, as it is also one of the most powerful.
+
+Here goes nothing!
+
+Up until this point, you have probably imagined Git's representation of the project history as a linear list of snapshots in order from oldest to newest.
+
+Honestly, this is actually spot on, provided one thing: The project has never had a branch other than master.
+
+#### master
+
+What the heck is master? Well, for all intent and purposes, it is the default branch.
+
+If you never create another branch, and happily apply all of your commits without even thinking about branches, what you are actually doing is appending new project snapshots onto the master branch incrementally.
+
+![](./images/branching0.png)
+
+C0, C1, and C2 are each commits in this projects history, and currently 'master' is the branch of this history that ends at C2.
+As such, every node that must be traversed from the first until C2 is part of master.
+
+In this case, you can almost say the 'HEAD commit' for 'master' is C2 (_foreshadowing_).
+
+It might seem strange to visualize a branch as a pointer to a node in a series rather than the entire list being called 'master', but this will make sense shortly.
+
+#### New branches
+
+This is great in all if you are working solo on non-experimental features, but what if you want to collaborate, or experiment?
+
+What if you `pull`ed the project history 5 months ago, `commit`ted something, and forgot to `push` it back to the server?
+What if 15 different people did the same thing as you? Whose version do you use?
+
+What if you wanted to try out a really wacky change in your project (like changing all red buttons to green?), make all the changes across a few different commits, push to master, and then decide you don't like it?
+It is not particularly fun to manually determine which of your commits you want to negate.
+
+So what is the solution? Well obviously, you make a new branch!
+
+Let's say I want to implement a new feature under the code name 'iss53'.
+I might work alone on it, I might work with some other people, but more importantly, I might not want to keep the feature once I start to see how it turns out.
+
+So what we do is create a branch (do not worry about the specific commands at this moment).
+We can either create a fresh branch that has no history associated with it, though this is quite rare.
+More often than not, a branch is created at first based upon some other already existing branch.
+
+This 'branch' is really just another pointer to the most recent snapshot in some timeline.
+So if we create a branch, using our already committed to 'master' as a basis, we would end up with something like this:
+
+![](./images/branching1.ang)
+
+To be clear, I do __not__ recommend you name your branches such ambiguous things as 'iss53', but I didn't feel like doing any image editing today:
+
+#### Committing to a New Branch
+
+Once we create a branch, we must switch our branch context to actually work with it.
+As far as Git is concerned, you can only concern yourself with one branch locally at a time, though it makes it quite easy to switch (again, commands come later).
+
+So let's say we switch the active branch on our local machine to be `iss53`.
+We then make some changes, and then commit those changes.
+
+Where did the changes go? Where is 'master' pointing? Who am I?
+
+Quite simply, the new commit, called C3, was appended onto the linear history we already had established.
+The `iss53` reference was updated to point to C3 as the latest point in this branches timeline, but `master` was not.
+
+What gives?
+
+Well, if you think about this, it makes a lot of sense.
+We only applied a change to the `iss53` branch, so it wouldn't make much sense if `master`'s history also included that commit.
+
+However, because `iss53` shared it's entire history with master (and was identical until a few moments ago), it also makes sense that `master` is being represented as only a single commit behind the `iss53` branch, the commit being C3 in this case.
+
+But what now?
+Do we just ditch master and continue work on the `iss53` branch because we like our changes?
+
+No, not usually. You can! That is your freedom and right, but most people choose to use `master` as a sort of 'production' branch that represents the currently accepted state of a project.
+
+So what do we do?
+This is where (simple) merging comes in.
+
+#### Simple merging
+
+Now that our specific line of work on the `iss53` branch is finished, and we want bring over these changes into the `master` branch, we must perform a branch merge.
+
+A merge is an attempt to perform a one way integration of one branch history into another.
+This example of branches is quite simple, but serves as a good example to understand some of the basic principles.
+
+Without going too much into the details of the commands, to merge branch A into branch B we would:
+
+0. Set branch B as our active branch.
+0. Run the merge command, specifying branch A
+
+That's it!
+It is important to note that doing it the other way around will not produce the same results.
+In this example, branch A's history is merged __into__ branch B's history.
+As a result, branch A is actually left unchanged.
+
+Coming back to our `is553` example, if we were to try to merge `master` into `iss53`, nothing would happen because there is no new history to merge.
+
+However, in the other direction, trying to merge `iss53` into `master`, because there is a linear path from `master` to `iss53`, would result in a fast-forward merge.
+
+It is called that because the HEAD pointer for `master` is quite literally just moved forward to the commit `iss53` points to.
+
+
 ## Useful Git Commands
 
 --------------------------------------------------------------------------------
