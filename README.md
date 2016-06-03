@@ -311,6 +311,63 @@ Assuming we tried to merge `iss53` into `master` right now, the result would loo
 
 ![](./images/branching4.png)
 
+### Merge Conflicts
+
+However, if these branches were more complex, there would be a possibility that this merge would produce some merging ambiguities.
+
+If there are ambiguities, such as two commits from different branches changing the same line in a file to two completely different things, it is not clear which of the two updated lines you actually want in the newly merged branch.
+
+In this case, there are merge conflicts that require manual intervention.
+These get a bad reputation as a very complex mechanism, but they are honestly fairly intuitive.
+
+Put your engineering cap on for a moment.
+If two different commits are saying that line 57 of some file should be two different things, how would you determine which line to use, without any priority information that is implicitly within the commits?
+
+Well, to put it simply, you ask the developers!
+
+That is all a merge conflict really is. Git determines a line could reasonably be two different things, and simply asks which one should stay.
+
+Granted, the interface for handling this is pretty low level.
+Git actually writes to each of the files that have merge conflicts with these little conflict markers.
+These conflict markers appear where the line in question would be, and show what each branch wants the line to be.
+
+They look something like this.
+
+```
+1. apples are
+2. <<<<<<< HEAD
+3. red
+4. =======
+5. green
+6. >>>>>>> branch-a
+7. and they are delicious!
+```
+
+__NOTE: The line numbers aren't actually there, they just aid in the next paragraphs discussion.__
+
+The `<<<<<<<< HEAD` means the following lines, until the `======` are what the active branch expects the lines to be.
+Everything after the `======` until `>>>>>>>> branch-a` are the lines that the other branch (here named `branch-a`) are expecting.
+
+You have 3 options here:
+
+0. Use what the active branch wants, by deleting lines 2, 4, 5, and 6.
+0. Use what the other branch wants, by deleting lines 2, 3, 4, and 6
+0. Do something entirely different by deleting lines 2-6 and writing something else entirely.
+
+Let's say in this case, I ultimately determined that apples can indeed be green OR red.
+So then, I delete the conflict markers and change a few of the lines:
+
+```
+apples can be
+either red or green
+and they are all delicious!
+```
+
+This is the reason that Git introduces a new commit when doing a non-fast forward based merge.
+There is a possibility that entirely new lines will be introduced, and there needs to be some unique commit that represents these unique changes.
+
+You should not actually finalize the merge until you resolve each of these conflicts, unless you want the commit markers to actually be in your source code!
+
 ## Useful Git Commands
 
 --------------------------------------------------------------------------------
