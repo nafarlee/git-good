@@ -367,6 +367,30 @@ There is a possibility that entirely new lines will be introduced, and there nee
 
 You should not actually finalize the merge until you resolve each of these conflicts, unless you want the commit markers to actually be in your source code!
 
+## GUI or Command-Line?
+
+### Command-Line
+
+The next section, "Useful git Commands" specifically discusses some of the most useful command line tools.
+If you are open to the idea of using the command line, I highly recommend getting comfortable with the git cli, as it is very powerful.
+
+The git command line is available as a download for every platform under the sun.
+
+[Download git CLI](https://git-scm.com/downloads)
+
+### GUI
+
+However, I realize that not everyone is comfortable on the command-line, or super keen about learning it just to access good version control.
+
+If you are not interested in using a command line interface, luckily there are many GUI based tools that provide access to git functionality.
+
+The one I recommend is SourceTree, a free visual git client available for Windows and Mac.
+It is created by Atlassian, the same company that created JIRA and BitBucket.
+
+![](./images/sourcetree.png)
+
+[Download SourceTree](https://www.sourcetreeapp.com/)
+
 ## Useful git Commands
 
 --------------------------------------------------------------------------------
