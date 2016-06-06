@@ -442,7 +442,7 @@ Tell `git` to give the `status` of the current branch name and file names that h
 You are going to be running this one a lot.
 git manages a whole lot of information, and it can be quite confusing moving multiple changes throughout three tiers and remotes and such.
 
-![](./images/git-status.png)
+![](./images/git-status.gif)
 
 --------------------------------------------------------------------------------
 
