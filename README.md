@@ -661,3 +661,29 @@ The big difference hear is that both of these commits, the original and the comp
 So even though the line no longer exists in the most recent project commit, our change to the .git repository was purely additive.
 
 This play's much nicer with the way Git functions on a team.
+
+## Best Practices
+
+### Small Commits, Often
+
+Each commit should encapsulate the smallest possible amount of change while still being able to stand on its own.
+A good analogue is the atom as a representation of elements.
+The atom of any given element is the smallest possible representation of some element that is still fully identifiable as that element.
+
+This is what your commits should be: Atomic.
+
+It is possible to take this much too far, and commit for every line.
+It is possible to ignore this entirely, and commit only after thousands of tasks have been completed.
+
+It is all about balance, and it most certainly not objective.
+You essentially have to develop a feel for this, but the baseline is to denote commits by intent.
+
+If I want to change all instances of the HEX value for blue to the HEX value for red across the entire project, that is a single intent, and a single commit, though it may touch many files.
+
+Equally, if I only want to add some inline documentation for a function, that is a single commit, though it adds no new functionality.
+
+The benefits:
+
+- Easier to `revert` in the case of an unwanted commit, rather than manually pick apart a large commit.
+- Easier merging, because Git will signal fewer merge conflicts as it is less likely two commits touch the same lines.
+- Easier to understand the timeline of a project, as incremental small changes are easier to digest than a few monolithic ones.
