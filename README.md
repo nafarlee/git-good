@@ -714,3 +714,20 @@ There are a few guidelines that should be followed:
 0. Start the first letter of your commit with a capital letter. This, and the previous guideline are to match Git tools internally generated commit messages.
 0. Initial summary (first line) should not go too far beyond 50 characters. It can obviously be shorter. (It helps for readability/some Git tooling).
 0. If the commit, or its motivation, is not sufficiently clear just from the summary line, add extended summary paragraphs below the summary, seperated by a blank line.
+
+### Don't Change History You Already Pushed!
+
+We have all done it. You finish a commit, and shortly after realize you forgot something, or messed up the message, or some related issue.
+
+If you haven't pushed it yet, no big deal!
+Feel free to manually `reset` the commit, and try again to get things right this time.
+After all, it is all local.
+No one else needs to know your mistake!
+
+However, if you have already pushed that issue to the central Git repository, DO NOT destructively change your Git history and then push again!
+It is not worth the headaches!
+
+There are always safe alternatives to perform the same operation.
+
+In most cases, if you publish a bad commit, simply `revert` the commit, push the reverted commit, and try again.
+Your team will thank you.
