@@ -37,7 +37,7 @@ Though not exhaustive, the following list of tangible benefits should (hopefully
   - Doesn't use unnecessary disk space for full project clones.
 - Intelligent tools and supporting capabilities that are possible because of the management of project history.
 - Implicit documentation of each change that happens to a project, which shows the path of implementation the developer took to complete a feature/fix an issue.
-- Low risk experimentation with single/multiple files, solo or collaboratively, as changes can be selectively undone or left unapplied.
+- Low risk experimentation with single/multiple files, solo or collaboratively, as changes can be selectively undone or left inactive.
 - Collaboration across multiple people can happen asynchronously without:
   - Race conditions when writing to the same file on a central server.
   - Drastic file differences when team members work in isolation.
@@ -48,7 +48,7 @@ Though not exhaustive, the following list of tangible benefits should (hopefully
 ## Evangelism?
 
 While this guide focuses on Git, as it is the VCS I use most often because I am quite happy with it, Git is not a be all end all.
-There are other systems that perform similarly to Git, and have different tradeoffs that might make more sense depending upon your use case.
+There are other systems that perform similarly to Git, and have different trade-offs that might make more sense depending upon your use case.
 
 The important thing is to use a true VCS of __some__ kind.
 Even if you are developing/writing solo, the utility a VCS provides over manual backups (or worse, nothing at all!) cannot be overstated.
@@ -145,7 +145,7 @@ To do this, we attach a message to this bundle, briefly describing the intent of
 
 The entire staging area is sent at once to the .git directory, but you may selectively choose what changes in the working directory are made known to the staging area at any given time. This is how you may finely manage what exactly one `commit` encompasses.
 
-Once changes are commited, they are solidified as a new snapshot in Git's representation of the project history.
+Once changes are committed, they are solidified as a new snapshot in Git's representation of the project history.
 
 All the data Git manages is generated as part of this process. Every other supporting functionality Git offers is just tooling around this information.
 
@@ -394,7 +394,7 @@ These commands might seem like strange candidates to be lumped together, but the
 
 `init` is run when the very first person on a project decides they want git in their project's life. This can be before any code is written, or later down the line when you already have some code.
 
-`clone` is run everytime someone wants the project (including absolutely ALL Git project information) to exist on their computer, allowing them to contribute just like any other person.
+`clone` is run every time someone wants the project (including absolutely ALL Git project information) to exist on their computer, allowing them to contribute just like any other person.
 
 Typically one person runs the `init` command once at the start of the project, and then whenever a new developer is interested in contributing, they `clone` that same project and then forever have that project.
 
@@ -412,7 +412,7 @@ Tell `git` to grab the Git project metadata hosted at the URL, and make a `clone
 
 This command is the way that a change in the working directory is added to the staging area. It can be run as many times as necessary to add more and more to the staging area, until the staging area contains all wanted changes for the next commit.
 
-The files this acts upon must actually physically reside within the projects folder, either in the root or in a subfolder.
+The files this acts upon must actually physically reside within the projects folder, either in the root or in a sub folder.
 
 Some useful forms of this command:
 
@@ -604,7 +604,7 @@ See the `Branches` section for more details
 
 This command is one of the most misunderstood, and possibly one of the most feared git commands, and with good reason!
 
-It is fairly hard to understand what `reset` actually does before you funadamentally understand what the three main states in Git are.
+It is fairly hard to understand what `reset` actually does before you fundamentally understand what the three main states in Git are.
 It's a good thing you do know all of that by now!
 
 The reason this command is feared is that it actually does modify the .git repository, something usually rather immutable, and it can also undo all of your changes in the working directory, also rather scary.
@@ -660,7 +660,7 @@ For example, adding a line in commit A can be complemented out of existence by a
 The big difference hear is that both of these commits, the original and the complement, remain in the project history.
 So even though the line no longer exists in the most recent project commit, our change to the .git repository was purely additive.
 
-This play's much nicer with the way Git functions on a team.
+This plays much nicer with the way Git functions on a team.
 
 ## Best Practices
 
@@ -680,7 +680,7 @@ You essentially have to develop a feel for this, but the baseline is to denote c
 
 If I want to change all instances of the HEX value for blue to the HEX value for red across the entire project, that is a single intent, and a single commit, though it may touch many files.
 
-Equally, if I only want to add some inline documentation for a function, that is a single commit, though it adds no new functionality.
+Equally, if I only want to add some in-line documentation for a function, that is a single commit, though it adds no new functionality.
 
 The benefits:
 
@@ -713,7 +713,7 @@ There are a few guidelines that should be followed:
 0. Write your commit message in the present tense. The commit message should comfortably fit in the blank line in the sentence: "If you apply this commit, it will ___________________"
 0. Start the first letter of your commit with a capital letter. This, and the previous guideline are to match Git tools internally generated commit messages.
 0. Initial summary (first line) should not go too far beyond 50 characters. It can obviously be shorter. (It helps for readability/some Git tooling).
-0. If the commit, or its motivation, is not sufficiently clear just from the summary line, add extended summary paragraphs below the summary, seperated by a blank line.
+0. If the commit, or its motivation, is not sufficiently clear just from the summary line, add extended summary paragraphs below the summary, separated by a blank line.
 
 ### Don't Change History You Already Pushed!
 
@@ -737,10 +737,10 @@ Your team will thank you.
 Git affords a team a lot of flexibility when it comes to the way they handle collaboration.
 
 There is no real 'silver bullet' in this area.
-All of the different workflows and branching/merging strategies have different tradeoffs that developers/writers should evaluate on a team (or even project) basis.
+All of the different workflows and branching/merging strategies have different trade-offs that developers/writers should evaluate on a team (or even project) basis.
 
 However, the important point here is that this discussion __must__ happen.
-A lot of time will be wasted squashing unnecessary merge conflicts or performing local machine repoitory resets if people are not on the same page.
+A lot of time will be wasted squashing unnecessary merge conflicts or performing local machine repository resets if people are not on the same page.
 
 - Establish a branching strategy
 - Establish a merging strategy
