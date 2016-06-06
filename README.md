@@ -1,16 +1,16 @@
 ![](./images/git.png)
 
-# Git
+# git
 
-If you have no idea what Git or version control are, continue reading.
+If you have no idea what git or version control are, continue reading.
 
-If you are already comfortable with Git, but are curious how it actually works, skip to "Design and Inner Workings".
+If you are already comfortable with git, but are curious how it actually works, skip to "Design and Inner Workings".
 
-If you are already comfortable with Git, but just want to learn some new sweet commands, skip to "Useful Git commands".
+If you are already comfortable with git, but just want to learn some new sweet commands, skip to "Useful git commands".
 
-## What is Git?
+## What is git?
 
-In the simplest terms, Git is a version control system (VCS).
+In the simplest terms, git is a version control system (VCS).
 Historically, the purpose of a VCS is exclusively to track changes to files over time.
 
 Though this does not sound like a particularly amazing feat, it is a hard process to get right if you are trying to do it manually.
@@ -28,7 +28,7 @@ Alternatively, to save on disk space, you can copy only the files that changed i
 VCS seeks to alleviate this by offering simple abstractions on top of this project diff business that work at scale.
 
 Someone who is not familiar with VCS might assume this is only useful for a project wide 'undo history'.
-However, in practice, using VCS, and Git successfully means treating it much more like a supportive function than just an undo button.
+However, in practice, using VCS, and git successfully means treating it much more like a supportive function than just an undo button.
 
 ## What are the benefits?
 
@@ -49,13 +49,13 @@ Though not exhaustive, the following list of tangible benefits should (hopefully
 
 ## Evangelism?
 
-While this guide focuses on Git, as it is the VCS I use most often because I am quite happy with it, Git is not a be all end all.
-There are other systems that perform similarly to Git, and have different trade-offs that might make more sense depending upon your use case.
+While this guide focuses on git, as it is the VCS I use most often because I am quite happy with it, git is not a be all end all.
+There are other systems that perform similarly to git, and have different trade-offs that might make more sense depending upon your use case.
 
 The important thing is to use a true VCS of __some__ kind.
 Even if you are developing/writing solo, the utility a VCS provides over manual backups (or worse, nothing at all!) cannot be overstated.
 
-Beyond this point, things become increasingly Git focused.
+Beyond this point, things become increasingly git focused.
 
 _You have been warned..._
 
@@ -64,7 +64,7 @@ _You have been warned..._
 ### The Cathedral and the Bazaar
 
 All VCS help track versions of files as people modify them.
-In this sense, Git is no different.
+In this sense, git is no different.
 
 Though each VCS might implement different nifty features and workflows, the basic idea is the same.
 
@@ -109,25 +109,25 @@ However, this model has its issues as well, and is made possible by a lot of fai
 
 Again, measuring the pros and cons of each VCS type is not within the scope of this document, but I personally believe DVCS is an improvement over Centralized VCS.
 
-If you have not guessed yet, Git falls into the category of DVCS.
+If you have not guessed yet, git falls into the category of DVCS.
 
-Examples of Decentralized VCS include: Git, Mercurial, BitKeeper.
+Examples of Decentralized VCS include: git, Mercurial, BitKeeper.
 
-### How Git Exists in a Project
+### How git Exists in a Project
 
 To start, the way git actually manages a project is through a hidden .git folder that exists within the root of the project.
 
-This is the folder that marks the difference between a project managed by Git, and one that does not. The entire project history, and all supporting metadata that exists for that project is within this folder.
+This is the folder that marks the difference between a project managed by git, and one that does not. The entire project history, and all supporting metadata that exists for that project is within this folder.
 
-As a result, if you have a project managed by Git, and you no longer want to manage it via Git, and do not care about the history Git has managed, simply __deleting the .git folder is all that is necessary to stop using Git and remove all history for that project__.
+As a result, if you have a project managed by git, and you no longer want to manage it via git, and do not care about the history git has managed, simply __deleting the .git folder is all that is necessary to stop using git and remove all history for that project__.
 
-That sounds scary, but chances are, you will not manually edit anything in the .git folder for the entire duration of your career, and _almost_ all Git commands append new information to the history, rather than change previous history.
+That sounds scary, but chances are, you will not manually edit anything in the .git folder for the entire duration of your career, and _almost_ all git commands append new information to the history, rather than change previous history.
 
-As a result, it is __very hard__ to lose information about your project when you are working with Git.
+As a result, it is __very hard__ to lose information about your project when you are working with git.
 
-### The Three Main Git States
+### The Three Main git States
 
-During everyday use, a file and associated changes, as managed by Git, can exist in three main states (there are a few more, but they aren't necessary to get started).
+During everyday use, a file and associated changes, as managed by git, can exist in three main states (there are a few more, but they aren't necessary to get started).
 
 The three main states are:
 
@@ -135,7 +135,7 @@ The three main states are:
 - The Staging Area
 - The .git directory
 
-![Main Git States](./images/states.png)
+![Main git States](./images/states.png)
 
 The working directory, for all intent and purposes, is how your project exactly exists on your filesystem. You interact with these files how you normally would. You may edit, delete, move, and copy with any tools you see fit. If a file only exists in the working directory, and git has never tracked changes for the file, it is referred to as "Untracked".
 
@@ -147,9 +147,9 @@ To do this, we attach a message to this bundle, briefly describing the intent of
 
 The entire staging area is sent at once to the .git directory, but you may selectively choose what changes in the working directory are made known to the staging area at any given time. This is how you may finely manage what exactly one `commit` encompasses.
 
-Once changes are committed, they are solidified as a new snapshot in Git's representation of the project history.
+Once changes are committed, they are solidified as a new snapshot in git's representation of the project history.
 
-All the data Git manages is generated as part of this process. Every other supporting functionality Git offers is just tooling around this information.
+All the data git manages is generated as part of this process. Every other supporting functionality git offers is just tooling around this information.
 
 ### The push/pull Lifecycle
 
@@ -159,7 +159,7 @@ So you have your git repository coming along nicely, making steady progress on y
 
 This is where the push/pull lifecycle comes in, and honestly it is a very simple concept. Though each developer/writer has a copy of the project locally, there is usually a centrally stored version of the project on a server somewhere as well.
 
-So imagine a developer is working on a project alone, and has a lot of progress, but now wants to collaborate. What they will do is set the Git server's endpoint as their remote point (this remote point is set automatically if the project was cloned).
+So imagine a developer is working on a project alone, and has a lot of progress, but now wants to collaborate. What they will do is set the git server's endpoint as their remote point (this remote point is set automatically if the project was cloned).
 
 This remote (if there is only one) is usually referred to as origin.
 
@@ -185,11 +185,9 @@ What happens if you have changes pending in your working directory and you try t
 
 ### Branches
 
-This is probably the Git feature that is the most confusing, which is a shame, as it is also one of the most powerful.
+This is probably the git feature that is the most confusing, which is a shame, as it is also one of the most powerful.
 
-Here goes nothing!
-
-Up until this point, you have probably imagined Git's representation of the project history as a linear list of snapshots in order from oldest to newest.
+Up until this point, you have probably imagined git's representation of the project history as a linear list of snapshots in order from oldest to newest.
 
 Honestly, this is actually spot on, provided one thing: The project has never had a branch other than master.
 
@@ -237,7 +235,7 @@ To be clear, I do __not__ recommend you name your branches such ambiguous things
 #### Committing to a New Branch
 
 Once we create a branch, we must switch our branch context to actually work with it.
-As far as Git is concerned, you can only concern yourself with one branch locally at a time, though it makes it quite easy to switch (again, commands come later).
+As far as git is concerned, you can only concern yourself with one branch locally at a time, though it makes it quite easy to switch (again, commands come later).
 
 So let's say we switch the active branch on our local machine to be `iss53`.
 We then make some changes, and then commit those changes.
@@ -302,7 +300,7 @@ Now we no longer have a linear history if we consider all of our branches, but i
 ![](./images/branching3.png)
 
 If we wanted to merge `iss53` into `master` now, it might not be entirely obvious what happens.
-Well, in many cases, because of recording changes line by line, and some complex diffing algorithms, Git can determine that there are no ambiguities, even when merging very complex branches.
+Well, in many cases, because of recording changes line by line, and some complex diffing algorithms, git can determine that there are no ambiguities, even when merging very complex branches.
 
 It is called this because 3 commits are involved in the process.
 It takes the HEAD commit of branch `iss53`, the HEAD commit of branch `master`, and creates a new commit that encompasses both their histories, and actually has each of those 2 nodes as its parents. It then moves the active branches pointer to this new commit.
@@ -327,10 +325,10 @@ If two different commits are saying that line 57 of some file should be two diff
 
 Well, to put it simply, you ask the developers!
 
-That is all a merge conflict really is. Git determines a line could reasonably be two different things, and simply asks which one should stay.
+That is all a merge conflict really is. git determines a line could reasonably be two different things, and simply asks which one should stay.
 
 Granted, the interface for handling this is pretty low level.
-Git actually writes to each of the files that have merge conflicts with these little conflict markers.
+git actually writes to each of the files that have merge conflicts with these little conflict markers.
 These conflict markers appear where the line in question would be, and show what each branch wants the line to be.
 
 They look something like this.
@@ -365,12 +363,12 @@ either red or green
 and they are all delicious!
 ```
 
-This is the reason that Git introduces a new commit when doing a non-fast forward based merge.
+This is the reason that git introduces a new commit when doing a non-fast forward based merge.
 There is a possibility that entirely new lines will be introduced, and there needs to be some unique commit that represents these unique changes.
 
 You should not actually finalize the merge until you resolve each of these conflicts, unless you want the commit markers to actually be in your source code!
 
-## Useful Git Commands
+## Useful git Commands
 
 --------------------------------------------------------------------------------
 
@@ -568,7 +566,7 @@ __important__: This is how you will create a new branch most of the time.
 
 Tell `git` to `checkout` to `-t`rack the `remote-branch-name` locally, and then `checkout` each file in the `remote-branch`
 
-Git technically has to have a local copy of any history you want to work on, so if there is a remote branch you don't reference locally, this command simultaneously downloads that branch, creating a local reference, switches to it, and then checks out each file
+git technically has to have a local copy of any history you want to work on, so if there is a remote branch you don't reference locally, this command simultaneously downloads that branch, creating a local reference, switches to it, and then checks out each file
 
 --------------------------------------------------------------------------------
 
@@ -677,17 +675,15 @@ This is what your commits should be: Atomic.
 It is possible to take this much too far, and commit for every line.
 It is possible to ignore this entirely, and commit only after thousands of tasks have been completed.
 
-It is all about balance, and it most certainly not objective.
 You essentially have to develop a feel for this, but the baseline is to denote commits by intent.
 
 If I want to change all instances of the HEX value for blue to the HEX value for red across the entire project, that is a single intent, and a single commit, though it may touch many files.
-
 Equally, if I only want to add some in-line documentation for a function, that is a single commit, though it adds no new functionality.
 
 The benefits:
 
 - Easier to `revert` in the case of an unwanted commit, rather than manually pick apart a large commit.
-- Easier merging, because Git will signal fewer merge conflicts as it is less likely two commits touch the same lines.
+- Easier merging, because git will signal fewer merge conflicts as it is less likely two commits touch the same lines.
 - Easier to understand the timeline of a project, as incremental small changes are easier to digest than a few monolithic ones.
 
 ### Write Good Commit Messages
@@ -713,8 +709,8 @@ It is helpful, when trying to find a commit, or diagnose an issue, or even just 
 There are a few guidelines that should be followed:
 
 0. Write your commit message in the present tense. The commit message should comfortably fit in the blank line in the sentence: "If you apply this commit, it will ___________________"
-0. Start the first letter of your commit with a capital letter. This, and the previous guideline are to match Git tools internally generated commit messages.
-0. Initial summary (first line) should not go too far beyond 50 characters. It can obviously be shorter. (It helps for readability/some Git tooling).
+0. Start the first letter of your commit with a capital letter. This, and the previous guideline are to match git tools internally generated commit messages.
+0. Initial summary (first line) should not go too far beyond 50 characters. It can obviously be shorter. (It helps for readability/some git tooling).
 0. If the commit, or its motivation, is not sufficiently clear just from the summary line, add extended summary paragraphs below the summary, separated by a blank line.
 
 ### Don't Change History You Already Pushed!
@@ -726,7 +722,7 @@ Feel free to manually `reset` the commit, and try again to get things right this
 After all, it is all local.
 No one else needs to know your mistake!
 
-However, if you have already pushed that issue to the central Git repository, DO NOT destructively change your Git history and then push again!
+However, if you have already pushed that issue to the central git repository, DO NOT destructively change your git history and then push again!
 It is not worth the headaches!
 
 There are always safe alternatives to perform the same operation.
@@ -736,7 +732,7 @@ Your team will thank you.
 
 ### Agree on a Workflow
 
-Git affords a team a lot of flexibility when it comes to the way they handle collaboration.
+git affords a team a lot of flexibility when it comes to the way they handle collaboration.
 
 There is no real 'silver bullet' in this area.
 All of the different workflows and branching/merging strategies have different trade-offs that developers/writers should evaluate on a team (or even project) basis.
