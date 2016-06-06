@@ -731,3 +731,19 @@ There are always safe alternatives to perform the same operation.
 
 In most cases, if you publish a bad commit, simply `revert` the commit, push the reverted commit, and try again.
 Your team will thank you.
+
+### Agree on a Workflow
+
+Git affords a team a lot of flexibility when it comes to the way they handle collaboration.
+
+There is no real 'silver bullet' in this area.
+All of the different workflows and branching/merging strategies have different tradeoffs that developers/writers should evaluate on a team (or even project) basis.
+
+However, the important point here is that this discussion __must__ happen.
+A lot of time will be wasted squashing unnecessary merge conflicts or performing local machine repoitory resets if people are not on the same page.
+
+- Establish a branching strategy
+- Establish a merging strategy
+- Establish pre/post-commit requirements
+- Establish the governance and ownership of major branches `master`, `develop`
+- Establish a convention for branch naming
