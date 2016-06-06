@@ -272,6 +272,8 @@ Without going too much into the details of the commands, to merge branch A into 
 0. Set branch B as our active branch.
 0. Run the merge command, specifying branch A
 
+![](./images/branching2.5.png)
+
 That's it!
 It is important to note that doing it the other way around will not produce the same results.
 In this example, branch A's history is merged __into__ branch B's history.
