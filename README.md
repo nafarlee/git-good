@@ -687,3 +687,30 @@ The benefits:
 - Easier to `revert` in the case of an unwanted commit, rather than manually pick apart a large commit.
 - Easier merging, because Git will signal fewer merge conflicts as it is less likely two commits touch the same lines.
 - Easier to understand the timeline of a project, as incremental small changes are easier to digest than a few monolithic ones.
+
+### Write Good Commit Messages
+
+This sort of goes hand-in-hand with the previous best practice, as it is hard to write good commit messages if you do not commit often.
+
+If a commit is atomic, it should be reasonably simple to describe it in just one sentence. If you can't its a good signal that the commit isn't atomic enough.
+
+But beyond that, the utmost effort should be made to make commit messages consistent and descriptive.
+
+Rather than have a commit messages like:
+
+- `fixed stuff`
+- `oops`
+- `super long commit message that spans hundreds of characters but doesn't actually give me any information that is helpful`
+
+It is helpful, when trying to find a commit, or diagnose an issue, or even just reading through branch history to try to understand the timeline, to have a commit messages like:
+
+- `Fix issue with home button hidden on Android`
+- `Fix typos in documentation`
+- `Add 1920x1080 resolution option in pause menu`
+
+There are a few guidelines that should be followed:
+
+0. Write your commit message in the present tense. The commit message should comfortably fit in the blank line in the sentence: "If you apply this commit, it will ___________________"
+0. Start the first letter of your commit with a capital letter. This, and the previous guideline are to match Git tools internally generated commit messages.
+0. Initial summary (first line) should not go too far beyond 50 characters. It can obviously be shorter. (It helps for readability/some Git tooling).
+0. If the commit, or its motivation, is not sufficiently clear just from the summary line, add extended summary paragraphs below the summary, seperated by a blank line.
