@@ -578,6 +578,8 @@ Tell `git` to `checkout` to `-t`rack the `remote-branch-name` locally, and then 
 
 git technically has to have a local copy of any history you want to work on, so if there is a remote branch you don't reference locally, this command simultaneously downloads that branch, creating a local reference, switches to it, and then checks out each file
 
+![](./images/git-reset.png)
+
 --------------------------------------------------------------------------------
 
 ### `git reset`
