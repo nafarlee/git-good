@@ -421,6 +421,8 @@ For each diff, you have a few available commands:
 - q - leave the interactive patch session
 - s - split the currently presented lines, so they may be added or ignored with finer granularity
 
+![](./images/commit-lifecycle.png)
+
 --------------------------------------------------------------------------------
 
 ### `git commit`
