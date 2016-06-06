@@ -240,6 +240,8 @@ We then make some changes, and then commit those changes.
 
 Where did the changes go? Where is 'master' pointing? Who am I?
 
+![](./images/branching2.png)
+
 Quite simply, the new commit, called C3, was appended onto the linear history we already had established.
 The `iss53` reference was updated to point to C3 as the latest point in this branches timeline, but `master` remains at C2.
 
