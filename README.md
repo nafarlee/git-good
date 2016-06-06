@@ -216,21 +216,19 @@ What if 15 different people did the same thing as you? Whose version do you use?
 What if you wanted to try out a really wacky change in your project (like changing all red buttons to green?), make all the changes across a few different commits, push to master, and then decide you don't like it?
 It is not particularly fun to manually determine which of your commits you want to negate.
 
-So what is the solution? Well obviously, you make a new branch!
-
 Let's say I want to implement a new feature under the code name 'iss53'.
 I might work alone on it, I might work with some other people, but more importantly, I might not want to keep the feature once I start to see how it turns out.
 
 So what we do is create a branch (do not worry about the specific commands at this moment).
 We can either create a fresh branch that has no history associated with it, though this is quite rare.
-More often than not, a branch is created at first based upon some other already existing branch.
+More often than not, a branch is created based upon some other already existing branch.
 
 This 'branch' is really just another pointer to the most recent snapshot in some timeline.
 So if we create a branch, using our already committed to 'master' as a basis, we would end up with something like this:
 
 ![](./images/branching1.png)
 
-To be clear, I do __not__ recommend you name your branches such ambiguous things as 'iss53', but I didn't feel like doing any image editing today:
+To be clear, I do __not__ recommend you name your branches such ambiguous things as 'iss53', but I didn't feel like doing any image editing today.
 
 #### Committing to a New Branch
 
@@ -243,7 +241,7 @@ We then make some changes, and then commit those changes.
 Where did the changes go? Where is 'master' pointing? Who am I?
 
 Quite simply, the new commit, called C3, was appended onto the linear history we already had established.
-The `iss53` reference was updated to point to C3 as the latest point in this branches timeline, but `master` was not.
+The `iss53` reference was updated to point to C3 as the latest point in this branches timeline, but `master` remains at C2.
 
 What gives?
 
@@ -295,13 +293,14 @@ We will call this explosive commit C4.
 
 And then let's say work continued on `iss53`, producing a new commit C5.
 
-Now we no longer have a linear history if we consider all of our branches, but instead we have a directed acyclic graph.
+Now we no longer have a linear history. If we consider all of our branches, we have a directed acyclic graph.
 
 ![](./images/branching3.png)
 
 If we wanted to merge `iss53` into `master` now, it might not be entirely obvious what happens.
 Well, in many cases, because of recording changes line by line, and some complex diffing algorithms, git can determine that there are no ambiguities, even when merging very complex branches.
 
+This is usually referred to as a 3 commit merge.
 It is called this because 3 commits are involved in the process.
 It takes the HEAD commit of branch `iss53`, the HEAD commit of branch `master`, and creates a new commit that encompasses both their histories, and actually has each of those 2 nodes as its parents. It then moves the active branches pointer to this new commit.
 
@@ -376,8 +375,6 @@ You should not actually finalize the merge until you resolve each of these confl
 
 This is the command that allows you to customize your git configuration. Configurations can be applied globally, which will reside in a config file in your home directory, or locally, which will be stored with the project's `.git` repository.
 
-There are far too many configurations to enumerate, but some useful ones are:
-
 #### `git config --global user.name "John Smith"`
 
 Tell `git` to `config` our git settings `--global`ly by changing our `user.name` for further commits to `John Smith`
@@ -390,13 +387,7 @@ Tell `git` to `config` our git settings `--global`ly by changing our `user.email
 
 ### `git init` and `git clone`
 
-These commands might seem like strange candidates to be lumped together, but they are really two sides to the same coin. Both are run once when you initially want to start working on a project.
-
-`init` is run when the very first person on a project decides they want git in their project's life. This can be before any code is written, or later down the line when you already have some code.
-
-`clone` is run every time someone wants the project (including absolutely ALL Git project information) to exist on their computer, allowing them to contribute just like any other person.
-
-Typically one person runs the `init` command once at the start of the project, and then whenever a new developer is interested in contributing, they `clone` that same project and then forever have that project.
+Typically one person runs the `init` command once at the start of the project, and then whenever a new developer is interested in contributing, they `clone` that same project and then forever have that project locally.
 
 #### `git init`
 
@@ -404,17 +395,14 @@ Tell `git` to `init`ialize the current directory to be managed by git. Ultimatel
 
 #### `git clone <URL>`
 
-Tell `git` to grab the Git project metadata hosted at the URL, and make a `clone` of the project under the current working directory.
+Tell `git` to grab the git project metadata hosted at the URL, and make a `clone` of the project under the current working directory.
 
 --------------------------------------------------------------------------------
 
 ### `git add`
 
-This command is the way that a change in the working directory is added to the staging area. It can be run as many times as necessary to add more and more to the staging area, until the staging area contains all wanted changes for the next commit.
-
-The files this acts upon must actually physically reside within the projects folder, either in the root or in a sub folder.
-
-Some useful forms of this command:
+This command is the way that a change in the working directory is added to the staging area.
+It can be run as many times as necessary to add more and more to the staging area, until the staging area contains all wanted changes for the next commit.
 
 #### `git add <filepath>`
 
@@ -433,8 +421,6 @@ For each diff, you have a few available commands:
 - q - leave the interactive patch session
 - s - split the currently presented lines, so they may be added or ignored with finer granularity
 
-There are other options, but they are not crucial to the use of the `-p`atch interactive mode.
-
 --------------------------------------------------------------------------------
 
 ### `git commit`
@@ -451,9 +437,8 @@ Tell `git` to bundle up the contents of the staging area as a single `commit` wi
 
 Tell `git` to give the `status` of the current branch name and file names that have outstanding changes in the working directory or staging area.
 
-You are going to be running this one a lot. Git manages a whole lot of information, and it can be quite confusing moving multiple changes throughout three tiers and remotes and such.
-
-This command prints out a summary of outstanding changes about the working directory and staging area, as well as some other relevant information, like branch name.
+You are going to be running this one a lot.
+git manages a whole lot of information, and it can be quite confusing moving multiple changes throughout three tiers and remotes and such.
 
 --------------------------------------------------------------------------------
 
@@ -461,7 +446,6 @@ This command prints out a summary of outstanding changes about the working direc
 
 
 In a similar vein to `git status`, this reports about what is different in the project between the working directory and the staging area.
-
 The difference being, this command is focused on what the actual line-by-line changes are rather than giving a high level status of the project.
 
 #### `git diff`
@@ -478,8 +462,6 @@ Tell `git` to report about the `diff`erences  in each of the `files`.
 
 This command simply shows the list of commits in the .git repository in chronological order for the current branch.
 By default, it displays the commit hash number, the author, the date committed, and the commit message.
-
-However, through arguments, it can display so  much more (or less!) information, and serves as a wonderful tool for going over project.
 
 #### `git log`
 
@@ -501,15 +483,14 @@ Tell `git` to list the `log` of commits, including the `--stat`istics of per-fil
 
 Tell `git` to list the `log` of commits, including all branch `--graph`s, outputted in a `--pretty-format` that I specify in the following string. Only show the `--abbrev-commit` number, and include `--all` project history across all branches.
 
-This command is a __doozy__.
 Do not try to type this in all the time.
 Alias it to something short and sweet, and then run it to see the entire project history, in a very clean and concise output that includes an actual ASCII graph chart of all commits.
 
+--------------------------------------------------------------------------------
+
 ### `git branch`
 
-This is the command that is responsible for the and listing, and deletion of branches.
-Merging is a separate command.
-This command is also capable of creating a new branch, but it is much more common to shortcut this by creating a new branch as your check it out.
+This is the command that is responsible for the listing, and deletion of branches.
 
 #### `git branch`
 
@@ -527,10 +508,6 @@ Tell `git` to `-d`elete a local `branch` called `branch-name` that has already b
 
 ### `git checkout`
 
-This command is responsible for quite a few different things, but it always falls into the category of update the files in the working directory to match what a specified commit says the file is.
-
-Let's just jump into what the use cases are:
-
 #### `git checkout <filepath>`
 
 Tell `git` to `checkout` the `filepath` from the HEAD commit of the current branch and replace the same file in the working directory.
@@ -538,8 +515,6 @@ Tell `git` to `checkout` the `filepath` from the HEAD commit of the current bran
 Basically, if you have changes in a file `file.txt` in the working directory, and those changes are not yet referred to in the staging area, and you want to abandon those changes and get back a fresh `file.txt` as far as the most recent commit is concerned, you would run `git checkout file.txt`.
 
 This will not affect anything already referred to in the staging area.
-
-This effect maps much closer to the word 'reset' in English, but Git chose reset to be a different command.
 
 #### `git checkout <folderpath>`
 
@@ -549,8 +524,7 @@ Tell `git` to `checkout` every file within `folder` recursively with the version
 
 Tell `git` to `checkout` each file in the `local-branch`.
 
-This is a particularly __important__ command.
-This is how you change what your active branch currently is.
+__important__: This is how you change what your active branch currently is.
 
 So if I had 2 local branches, `master` and `cool-feature`, and currently `master` is active, running
 `git checkout cool-feature`
@@ -604,12 +578,7 @@ See the `Branches` section for more details
 
 This command is one of the most misunderstood, and possibly one of the most feared git commands, and with good reason!
 
-It is fairly hard to understand what `reset` actually does before you fundamentally understand what the three main states in Git are.
-It's a good thing you do know all of that by now!
-
 The reason this command is feared is that it actually does modify the .git repository, something usually rather immutable, and it can also undo all of your changes in the working directory, also rather scary.
-
-Fundamentally, this command undoes changes in the working directory, staging area, or .git repository.
 
 #### `git reset`
 
@@ -636,11 +605,8 @@ This command differs from `checkout`, because `checkout` does not delete any com
 
 Tell `git` to `reset` all of the references in the staging area, undo all changes in the working directory to match the files the specified `commit-sha`, and discard all commits that would have come after `commit-sha`
 
-Be very careful with this command!
+__important__: Be very careful with this command!
 This command can potentially delete a lot of .git history and all associated working directory related changes with it.
-
-It is possible to `pull` and get all of the changes back from the hosted server, but if there isn't a server or backup of some kind, that is it!
-All of those commits are forever lost.
 
 --------------------------------------------------------------------------------
 
@@ -650,17 +616,14 @@ Tell `git` to `revert` the specified `commit` by appending a perfectly complemen
 
 If you need to undo some commits in the .git repository's history, this is the safer, targeted version.
 
-Because Git keeps line by line records of everything that changes in a project for each commit, there are two different ways to change history, as it were.
+To unsafely undo commits, directly delete those commits from ever happening and then forcibly push this new history to your git server, though this will leave everyone else who tries to pull from the server with quite a headache.
 
-The unsafe version is to directly delete those commits from ever happening and then forcibly push this new history to your Git server, though this will leave everyone else who tries to pull from the server with quite a headache.
-
-The safe way to accomplish the same end result is to apply a perfect complement of a certain commit as a new commit.
+To safely undo a commit, apply a perfect complement of a certain commit as a new commit.
 
 For example, adding a line in commit A can be complemented out of existence by a new commit B that removes that same line.
 The big difference hear is that both of these commits, the original and the complement, remain in the project history.
-So even though the line no longer exists in the most recent project commit, our change to the .git repository was purely additive.
 
-This plays much nicer with the way Git functions on a team.
+--------------------------------------------------------------------------------
 
 ## Best Practices
 
@@ -693,7 +656,6 @@ This sort of goes hand-in-hand with the previous best practice, as it is hard to
 If a commit is atomic, it should be reasonably simple to describe it in just one sentence. If you can't its a good signal that the commit isn't atomic enough.
 
 But beyond that, the utmost effort should be made to make commit messages consistent and descriptive.
-
 Rather than have a commit messages like:
 
 - `fixed stuff`
