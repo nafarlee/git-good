@@ -641,3 +641,23 @@ This command can potentially delete a lot of .git history and all associated wor
 
 It is possible to `pull` and get all of the changes back from the hosted server, but if there isn't a server or backup of some kind, that is it!
 All of those commits are forever lost.
+
+--------------------------------------------------------------------------------
+
+### `git revert <commit>`
+
+Tell `git` to `revert` the specified `commit` by appending a perfectly complementary commit to the current branch.
+
+If you need to undo some commits in the .git repository's history, this is the safer, targeted version.
+
+Because Git keeps line by line records of everything that changes in a project for each commit, there are two different ways to change history, as it were.
+
+The unsafe version is to directly delete those commits from ever happening and then forcibly push this new history to your Git server, though this will leave everyone else who tries to pull from the server with quite a headache.
+
+The safe way to accomplish the same end result is to apply a perfect complement of a certain commit as a new commit.
+
+For example, adding a line in commit A can be complemented out of existence by a new commit B that removes that same line.
+The big difference hear is that both of these commits, the original and the complement, remain in the project history.
+So even though the line no longer exists in the most recent project commit, our change to the .git repository was purely additive.
+
+This play's much nicer with the way Git functions on a team.
