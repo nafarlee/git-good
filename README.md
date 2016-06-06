@@ -286,7 +286,7 @@ Some people like to hold onto all of their branches for documentation purposes, 
 
 If this was all that branches were capable of, they wouldn't be all that useful.
 
-### Complex Merging
+#### Complex Merging
 
 Moving back a bit, let's say we did not merge `iss53` into `master`, and some dire situation came up, and we had to commit directly to `master` immediately.
 We will call this explosive commit C4.
@@ -310,7 +310,7 @@ Assuming we tried to merge `iss53` into `master` right now, the result would loo
 
 ![](./images/branching4.png)
 
-### Merge Conflicts
+#### Merge Conflicts
 
 However, if these branches were more complex, there would be a possibility that this merge would produce some merging ambiguities.
 
