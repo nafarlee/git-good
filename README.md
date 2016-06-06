@@ -1,3 +1,5 @@
+![](./images/git.png)
+
 # Git
 
 If you have no idea what Git or version control are, continue reading.
