@@ -715,3 +715,5 @@ A lot of time will be wasted squashing unnecessary merge conflicts or performing
 - Establish pre/post-commit requirements
 - Establish the governance and ownership of major branches `master`, `develop`
 - Establish a convention for branch naming
+
+![](./images/git-workflow.png)
