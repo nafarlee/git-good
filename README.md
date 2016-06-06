@@ -378,6 +378,8 @@ You should not actually finalize the merge until you resolve each of these confl
 The next section, "Useful git Commands" specifically discusses some of the most useful command line tools.
 If you are open to the idea of using the command line, I highly recommend getting comfortable with the git cli, as it is very powerful.
 
+__Even if you are not up to the idea of actually using the command line, the next section goes over terminology and what certain words mean to git, so feel free to read anyway.__
+
 The git command line is available as a download for every platform under the sun.
 
 [Download git CLI](https://git-scm.com/downloads)
