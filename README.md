@@ -488,24 +488,6 @@ Alias it to something short and sweet, and then run it to see the entire project
 
 --------------------------------------------------------------------------------
 
-### `git branch`
-
-This is the command that is responsible for the listing, and deletion of branches.
-
-#### `git branch`
-
-Tell `git` to list local branches.
-
-#### `git branch -a`
-
-Tell `git` to list `-a`ll branches, including those on remote.
-
-#### `git branch -d <branch-name>`
-
-Tell `git` to `-d`elete a local `branch` called `branch-name` that has already been merged.
-
---------------------------------------------------------------------------------
-
 ### `git checkout`
 
 #### `git checkout <filepath>`
@@ -561,6 +543,24 @@ See the `push/pull Lifecycle` section for more details.
 Tell `git` to `push` all new commits from the local .git repository for the `branch` to `remote`.
 
 See the `push/pull Lifecycle` section for more details.
+
+--------------------------------------------------------------------------------
+
+### `git branch`
+
+This is the command that is responsible for the listing, and deletion of branches.
+
+#### `git branch`
+
+Tell `git` to list local branches.
+
+#### `git branch -a`
+
+Tell `git` to list `-a`ll branches, including those on remote.
+
+#### `git branch -d <branch-name>`
+
+Tell `git` to `-d`elete a local `branch` called `branch-name` that has already been merged.
 
 --------------------------------------------------------------------------------
 
