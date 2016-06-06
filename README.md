@@ -230,7 +230,7 @@ More often than not, a branch is created at first based upon some other already 
 This 'branch' is really just another pointer to the most recent snapshot in some timeline.
 So if we create a branch, using our already committed to 'master' as a basis, we would end up with something like this:
 
-![](./images/branching1.ang)
+![](./images/branching1.png)
 
 To be clear, I do __not__ recommend you name your branches such ambiguous things as 'iss53', but I didn't feel like doing any image editing today:
 
