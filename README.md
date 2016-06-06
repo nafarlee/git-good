@@ -490,6 +490,8 @@ Tell `git` to list the `log` of commits, including all branch `--graph`s, output
 Do not try to type this in all the time.
 Alias it to something short and sweet, and then run it to see the entire project history, in a very clean and concise output that includes an actual ASCII graph chart of all commits.
 
+![](./images/git-log.png)
+
 --------------------------------------------------------------------------------
 
 ### `git pull`
