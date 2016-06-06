@@ -597,3 +597,47 @@ See the `push/pull Lifecycle` section for more details.
 Tell `git` to `merge` the `other-branch` into the active branch.
 
 See the `Branches` section for more details
+
+--------------------------------------------------------------------------------
+
+### `git reset`
+
+This command is one of the most misunderstood, and possibly one of the most feared git commands, and with good reason!
+
+It is fairly hard to understand what `reset` actually does before you funadamentally understand what the three main states in Git are.
+It's a good thing you do know all of that by now!
+
+The reason this command is feared is that it actually does modify the .git repository, something usually rather immutable, and it can also undo all of your changes in the working directory, also rather scary.
+
+Fundamentally, this command undoes changes in the working directory, staging area, or .git repository.
+
+#### `git reset`
+
+Tell `git` to `reset` the all of the references in the staging area.
+
+This only cleans the staging area of any `add`ed references.
+It does not affect the working directory whatsoever.
+
+#### `git reset <commit-sha>`
+
+Tell `git` to `reset` all references in the staging area, and rewind the HEAD pointer of the current branch to the specified `commit-sha`.
+
+This discards all of the commits within the .git repository that would have come after `commit-sha`, but does not modify the working directory whatsoever
+
+#### `git reset --hard`
+
+Tell `git` to `reset` all of the references in the staging area, as well as `reset` all files in the working directory back to the most recent commit.
+
+This does the same thing as the `--soft` version, but also `reset`s changes to the working directory.
+
+This command differs from `checkout`, because `checkout` does not delete any commits when it rewinds the .git repository branch pointer, it simply changes what commit it points at.
+
+#### `git reset <commit-sha> --hard`
+
+Tell `git` to `reset` all of the references in the staging area, undo all changes in the working directory to match the files the specified `commit-sha`, and discard all commits that would have come after `commit-sha`
+
+Be very careful with this command!
+This command can potentially delete a lot of .git history and all associated working directory related changes with it.
+
+It is possible to `pull` and get all of the changes back from the hosted server, but if there isn't a server or backup of some kind, that is it!
+All of those commits are forever lost.
