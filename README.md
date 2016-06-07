@@ -1,6 +1,8 @@
 ![](./images/git.png)
 
-# git
+# Git Good
+
+#### _by Nicholas Farley_
 
 If you have no idea what git or version control are, continue reading.
 
