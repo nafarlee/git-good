@@ -730,6 +730,17 @@ There are always safe alternatives to perform the same operation.
 In most cases, if you publish a bad commit, simply `revert` the commit, push the reverted commit, and try again.
 Your team will thank you.
 
+### Feel Free to Experiment (on Branches)
+
+When prototyping a new feature, or working through some bug, it is quite tempting to just keep working at it with reckless abandon for project history.
+
+Rather than sit on `master` with a tremendous amount of pending changes in the working directory, waiting for the _perfect_ commit to be finished, split it off into a new branch.
+
+In this new (usually local only) branch, you are free to make changes and commits that are experimentive.
+In the case none of the commits are working, you can just crash the branch, never merging it into `master`.
+
+This gives you all of the benefit of git without the potentially messy business of `master` getting bad commits.
+
 ### Agree on a Workflow
 
 git affords a team a lot of flexibility when it comes to the way they handle collaboration.
