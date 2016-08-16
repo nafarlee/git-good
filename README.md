@@ -478,6 +478,46 @@ git manages a whole lot of information, and it can be quite confusing moving mul
 
 --------------------------------------------------------------------------------
 
+### `git checkout`
+
+#### `git checkout <filepath>`
+
+Tell `git` to `checkout` the `filepath` from the HEAD commit of the current branch and replace the same file in the working directory.
+
+Basically, if you have changes in a file `file.txt` in the working directory, and those changes are not yet referred to in the staging area, and you want to abandon those changes and get back a fresh `file.txt` as far as the most recent commit is concerned, you would run `git checkout file.txt`.
+
+This will not affect anything already referred to in the staging area.
+
+#### `git checkout <folderpath>`
+
+Tell `git` to `checkout` every file within `folder` recursively with the versions from the HEAD commit of the current branch.
+
+#### `git checkout <local-branch>`
+
+Tell `git` to `checkout` each file in the `local-branch`.
+
+__important__: This is how you change what your active branch currently is.
+
+So if I had 2 local branches, `master` and `cool-feature`, and currently `master` is active, running
+`git checkout cool-feature`
+will change the active branch to `cool-feature` and will also `checkout` each file in the working directory to match the HEAD commit of `cool-feature`.
+
+#### `git checkout -b <new-local-branch>`
+
+Tell `git` to create a new local `-b`ranch called `new-local-branch` based on the HEAD of the current active branch, then make `new-local-branch` the active branch.
+
+__important__: This is how you will create a new branch most of the time.
+
+#### `git checkout -t <remote-branch>`
+
+Tell `git` to `checkout` to `-t`rack the `remote-branch-name` locally, and then `checkout` each file in the `remote-branch`
+
+git technically has to have a local copy of any history you want to work on, so if there is a remote branch you don't reference locally, this command simultaneously downloads that branch, creating a local reference, switches to it, and then checks out each file
+
+![](./images/git-reset.png)
+
+--------------------------------------------------------------------------------
+
 ### `git diff`
 
 
@@ -571,46 +611,6 @@ Tell `git` to `-d`elete a local `branch` called `branch-name` that has already b
 Tell `git` to `merge` the `other-branch` into the active branch.
 
 See the `Branches` section for more details
-
---------------------------------------------------------------------------------
-
-### `git checkout`
-
-#### `git checkout <filepath>`
-
-Tell `git` to `checkout` the `filepath` from the HEAD commit of the current branch and replace the same file in the working directory.
-
-Basically, if you have changes in a file `file.txt` in the working directory, and those changes are not yet referred to in the staging area, and you want to abandon those changes and get back a fresh `file.txt` as far as the most recent commit is concerned, you would run `git checkout file.txt`.
-
-This will not affect anything already referred to in the staging area.
-
-#### `git checkout <folderpath>`
-
-Tell `git` to `checkout` every file within `folder` recursively with the versions from the HEAD commit of the current branch.
-
-#### `git checkout <local-branch>`
-
-Tell `git` to `checkout` each file in the `local-branch`.
-
-__important__: This is how you change what your active branch currently is.
-
-So if I had 2 local branches, `master` and `cool-feature`, and currently `master` is active, running
-`git checkout cool-feature`
-will change the active branch to `cool-feature` and will also `checkout` each file in the working directory to match the HEAD commit of `cool-feature`.
-
-#### `git checkout -b <new-local-branch>`
-
-Tell `git` to create a new local `-b`ranch called `new-local-branch` based on the HEAD of the current active branch, then make `new-local-branch` the active branch.
-
-__important__: This is how you will create a new branch most of the time.
-
-#### `git checkout -t <remote-branch>`
-
-Tell `git` to `checkout` to `-t`rack the `remote-branch-name` locally, and then `checkout` each file in the `remote-branch`
-
-git technically has to have a local copy of any history you want to work on, so if there is a remote branch you don't reference locally, this command simultaneously downloads that branch, creating a local reference, switches to it, and then checks out each file
-
-![](./images/git-reset.png)
 
 --------------------------------------------------------------------------------
 
