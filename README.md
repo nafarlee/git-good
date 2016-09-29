@@ -204,7 +204,7 @@ If you never create another branch, and happily apply all of your commits withou
 C0, C1, and C2 are each commits in this projects history, and currently 'master' is the branch of this history that ends at C2.
 As such, every node that must be traversed from the first until C2 is part of master.
 
-In this case, you can almost say the 'HEAD commit' for 'master' is C2 (_foreshadowing_).
+In this case, you can almost say the commit at the 'HEAD' of this chain is C2 (_foreshadowing_).
 
 It might seem strange to visualize a branch as a pointer to a node in a series rather than the entire list being called 'master', but this will make sense shortly.
 
@@ -285,7 +285,7 @@ Coming back to our `is553` example, if we were to try to merge `master` into `is
 
 However, in the other direction, trying to merge `iss53` into `master`, because there is a linear path from `master` to `iss53`, would result in a fast-forward merge.
 
-It is called that because the HEAD pointer for `master` is quite literally just moved forward to the commit `iss53` points to.
+It is called that because the `master` pointer is quite literally just moved forward to the commit `iss53` points to.
 
 Once we are finished with `iss53`, and it's changes are merged into a branch we actually plan to hold onto, we can go ahead and delete the `iss53` branch, which really just removes the erroneous pointer in this case.
 Some people like to hold onto all of their branches for documentation purposes, but that is up to user discretion.
@@ -308,7 +308,7 @@ Well, in many cases, because of recording changes line by line, and some complex
 
 This is usually referred to as a 3 commit merge.
 It is called this because 3 commits are involved in the process.
-It takes the HEAD commit of branch `iss53`, the HEAD commit of branch `master`, and creates a new commit that encompasses both their histories, and actually has each of those 2 nodes as its parents. It then moves the active branches pointer to this new commit.
+It takes the commit of branch `iss53`, the commit of branch `master`, and creates a new commit that encompasses both their histories, and actually has each of those 2 nodes as its parents. It then moves the active branches pointer to this new commit.
 
 And that's it!
 
@@ -482,7 +482,7 @@ git manages a whole lot of information, and it can be quite confusing moving mul
 
 #### `git checkout <filepath>`
 
-Tell `git` to `checkout` the `filepath` from the HEAD commit of the current branch and replace the same file in the working directory.
+Tell `git` to `checkout` the `filepath` from the HEAD commit and replace the same file in the working directory.
 
 Basically, if you have changes in a file `file.txt` in the working directory, and those changes are not yet referred to in the staging area, and you want to abandon those changes and get back a fresh `file.txt` as far as the most recent commit is concerned, you would run `git checkout file.txt`.
 
@@ -490,7 +490,7 @@ This will not affect anything already referred to in the staging area.
 
 #### `git checkout <folderpath>`
 
-Tell `git` to `checkout` every file within `folder` recursively with the versions from the HEAD commit of the current branch.
+Tell `git` to `checkout` every file within `folder` recursively with the versions from the HEAD commit.
 
 #### `git checkout <local-branch>`
 
@@ -500,11 +500,11 @@ __important__: This is how you change what your active branch currently is.
 
 So if I had 2 local branches, `master` and `cool-feature`, and currently `master` is active, running
 `git checkout cool-feature`
-will change the active branch to `cool-feature` and will also `checkout` each file in the working directory to match the HEAD commit of `cool-feature`.
+will change the active branch to `cool-feature` and will also `checkout` each file in the working directory to match `cool-feature`.
 
 #### `git checkout -b <new-local-branch>`
 
-Tell `git` to create a new local `-b`ranch called `new-local-branch` based on the HEAD of the current active branch, then make `new-local-branch` the active branch.
+Tell `git` to create a new local `-b`ranch called `new-local-branch` based on HEAD, then make `new-local-branch` the active branch.
 
 __important__: This is how you will create a new branch most of the time.
 
@@ -629,7 +629,7 @@ It does not affect the working directory whatsoever.
 
 #### `git reset <commit-sha>`
 
-Tell `git` to `reset` all references in the staging area, and rewind the HEAD pointer of the current branch to the specified `commit-sha`.
+Tell `git` to `reset` all references in the staging area, and rewind the HEAD pointer to the specified `commit-sha`.
 
 This discards all of the commits within the .git repository that would have come after `commit-sha`, but does not modify the working directory whatsoever
 
